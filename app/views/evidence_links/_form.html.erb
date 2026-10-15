@@ -1,0 +1,37 @@
+<%= form_with(model: evidence_link) do |form| %>
+  <% if evidence_link.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(evidence_link.errors.count, "error") %> prohibited this evidence_link from being saved:</h2>
+
+      <ul>
+        <% evidence_link.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :question_id, style: "display: block" %>
+    <%= form.text_field :question_id %>
+  </div>
+
+  <div>
+    <%= form.label :quote_id, style: "display: block" %>
+    <%= form.text_field :quote_id %>
+  </div>
+
+  <div>
+    <%= form.label :decision, style: "display: block" %>
+    <%= form.text_field :decision %>
+  </div>
+
+  <div>
+    <%= form.label :note, style: "display: block" %>
+    <%= form.textarea :note %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

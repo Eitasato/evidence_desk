@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @evidence_link %>
+
+<div>
+  <%= link_to "Edit this evidence link", edit_evidence_link_path(@evidence_link) %> |
+  <%= link_to "Back to evidence links", evidence_links_path %>
+
+  <%= button_to "Destroy this evidence link", @evidence_link, method: :delete %>
+</div>

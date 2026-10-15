@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  source: one
+  body: MyText
+  heading_path: MyString
+  page_index: 1
+  paragraph_index: 1
+
+two:
+  source: two
+  body: MyText
+  heading_path: MyString
+  page_index: 1
+  paragraph_index: 1

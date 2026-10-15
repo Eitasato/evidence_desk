@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Evidence links" %>
+
+<h1>Evidence links</h1>
+
+<div id="evidence_links">
+  <% @evidence_links.each do |evidence_link| %>
+    <%= render evidence_link %>
+    <p>
+      <%= link_to "Show this evidence link", evidence_link %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New evidence link", new_evidence_link_path %>
