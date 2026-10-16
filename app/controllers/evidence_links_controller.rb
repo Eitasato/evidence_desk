@@ -65,6 +65,6 @@ class EvidenceLinksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def evidence_link_params
-      params.expect(evidence_link: [ :question_id, :quote_id, :decision, :note ])
+      params.expect(evidence_link: [ :question_id, :passage_id, :decision, :note ])
     end
 end

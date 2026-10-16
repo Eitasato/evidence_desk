@@ -2,12 +2,12 @@
 
 one:
   question: one
-  quote: one
+  passage: one
   decision: MyString
   note: MyText
 
 two:
   question: two
-  quote: two
+  passage: two
   decision: MyString
   note: MyText

@@ -1,6 +1,6 @@
-class CreateQuotes < ActiveRecord::Migration[8.1]
+class CreatePassages < ActiveRecord::Migration[8.1]
   def change
-    create_table :quotes do |t|
+    create_table :passages do |t|
       t.references :source, null: false, foreign_key: true
       t.text :body
       t.string :heading_path

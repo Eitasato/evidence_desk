@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :evidence_links
+  resources :passages
   resources :questions
-  resources :quotes
   resources :sources
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

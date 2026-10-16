@@ -10,25 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_15_074524) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_16_093649) do
   create_table "evidence_links", force: :cascade do |t|
     t.integer "question_id", null: false
-    t.integer "quote_id", null: false
+    t.integer "passage_id", null: false
     t.string "decision"
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["passage_id"], name: "index_evidence_links_on_passage_id"
     t.index ["question_id"], name: "index_evidence_links_on_question_id"
-    t.index ["quote_id"], name: "index_evidence_links_on_quote_id"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "quotes", force: :cascade do |t|
+  create_table "passages", force: :cascade do |t|
     t.integer "source_id", null: false
     t.text "body"
     t.string "heading_path"
@@ -36,7 +30,13 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_15_074524) do
     t.integer "paragraph_index"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["source_id"], name: "index_quotes_on_source_id"
+    t.index ["source_id"], name: "index_passages_on_source_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sources", force: :cascade do |t|
@@ -48,7 +48,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_15_074524) do
     t.index ["url"], name: "index_sources_on_url", unique: true
   end
 
+  add_foreign_key "evidence_links", "passages"
   add_foreign_key "evidence_links", "questions"
-  add_foreign_key "evidence_links", "quotes"
-  add_foreign_key "quotes", "sources"
+  add_foreign_key "passages", "sources"
 end

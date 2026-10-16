@@ -17,7 +17,7 @@ class EvidenceLinksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create evidence_link" do
     assert_difference("EvidenceLink.count") do
-      post evidence_links_url, params: { evidence_link: { decision: @evidence_link.decision, note: @evidence_link.note, question_id: @evidence_link.question_id, quote_id: @evidence_link.quote_id } }
+      post evidence_links_url, params: { evidence_link: { decision: @evidence_link.decision, note: @evidence_link.note, passage_id: @evidence_link.passage_id, question_id: @evidence_link.question_id } }
     end
 
     assert_redirected_to evidence_link_url(EvidenceLink.last)
@@ -34,7 +34,7 @@ class EvidenceLinksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update evidence_link" do
-    patch evidence_link_url(@evidence_link), params: { evidence_link: { decision: @evidence_link.decision, note: @evidence_link.note, question_id: @evidence_link.question_id, quote_id: @evidence_link.quote_id } }
+    patch evidence_link_url(@evidence_link), params: { evidence_link: { decision: @evidence_link.decision, note: @evidence_link.note, passage_id: @evidence_link.passage_id, question_id: @evidence_link.question_id } }
     assert_redirected_to evidence_link_url(@evidence_link)
   end
 
