@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :decision, style: "display: block" %>
-    <%= form.text_field :decision %>
+    <%= form.select :decision, EvidenceLink::DECISIONS, prompt: "Select a decision" %>
   </div>
 
   <div>
