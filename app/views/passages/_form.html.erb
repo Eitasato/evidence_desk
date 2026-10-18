@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :source_id, style: "display: block" %>
-    <%= form.text_field :source_id %>
+    <%= form.collection_select :source_id, Source.all, :id, :title, prompt: "Select a source" %>
   </div>
 
   <div>

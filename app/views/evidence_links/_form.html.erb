@@ -13,12 +13,12 @@
 
   <div>
     <%= form.label :question_id, style: "display: block" %>
-    <%= form.text_field :question_id %>
+    <%= form.collection_select :question_id, Question.all, :id, :body, prompt: "Select a question" %>
   </div>
 
   <div>
     <%= form.label :passage_id, style: "display: block" %>
-    <%= form.text_field :passage_id %>
+    <%= form.collection_select :passage_id, Passage.all, :id, :body, prompt: "Select a passage" %>
   </div>
 
   <div>
