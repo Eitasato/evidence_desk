@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1 or /questions/1.json
   def show
+    @links_by_decision = @question.evidence_links.includes(passage: :source).group_by(&:decision)
   end
 
   # GET /questions/new
