@@ -3,11 +3,11 @@
 one:
   question: one
   passage: one
-  decision: MyString
+  decision: 採用
   note: MyText
 
 two:
   question: two
   passage: two
-  decision: MyString
+  decision: 採用
   note: MyText

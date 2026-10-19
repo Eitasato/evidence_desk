@@ -1,11 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  title: MyString
-  url: MyString
+  title: 資料1
+  url: https://example.com/one
   source_type: MyString
 
 two:
-  title: MyString
-  url: MyString
+  title: 資料2
+  url: https://example.com/two
   source_type: MyString

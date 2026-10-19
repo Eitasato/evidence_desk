@@ -78,4 +78,3 @@ Rails.application.configure do
   config.hosts << /(?:[a-z0-9-]+\.)+cloudshell\.dev/
   config.action_controller.forgery_protection_origin_check = false
 end
-
