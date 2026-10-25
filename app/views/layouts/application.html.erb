@@ -24,6 +24,12 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to "Questions", questions_path %> |
+      <%= link_to "Sources", sources_path %> |
+      <%= link_to "Passages", passages_path %> |
+      <%= link_to "Evidence links", evidence_links_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>
