@@ -12,19 +12,19 @@
 <% EvidenceLink::DECISIONS.each do |decision| %>
   <% links = @links_by_decision.fetch(decision, []) %>
   <section>
-    <h2><%= decision %>（<%= links.size %>件）</h2>
+    <h2><%= decision %> (<%= links.size %>)</h2>
     <% links.each do |link| %>
       <% passage = link.passage %>
       <article>
         <p><%= passage.body %></p>
         <p>
           <%= passage.heading_path %>
-          ／ <%= passage.page_index %>ページ
-          ／ 第<%= passage.paragraph_index %>段落
+          / Page <%= passage.page_index %>
+          / Paragraph <%= passage.paragraph_index %>
         </p>
-        <p>資料：<%= link_to_if passage.source.url.present?, passage.source.title, passage.source.url, target: "_blank", rel: "noopener" %></p>
+        <p>Source: <%= link_to_if passage.source.url.present?, passage.source.title, passage.source.url, target: "_blank", rel: "noopener" %></p>
         <% if link.note.present? %>
-          <p>メモ：<%= link.note %></p>
+          <p>Note: <%= link.note %></p>
         <% end %>
       </article>
     <% end %>

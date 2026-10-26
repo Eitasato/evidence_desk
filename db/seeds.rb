@@ -29,16 +29,16 @@ popularity = Passage.find_or_create_by!(source: blog, page_index: 1, paragraph_i
 end
 
 EvidenceLink.find_or_create_by!(question: question, passage: primary) do |l|
-  l.decision = "採用"
+  l.decision = "Adopted"
   l.note = "States the core rule. Use it as the basis of the outline."
 end
 
 EvidenceLink.find_or_create_by!(question: question, passage: secondary) do |l|
-  l.decision = "保留"
+  l.decision = "Pending"
   l.note = "Useful, but check whether the client allows secondary sources."
 end
 
 EvidenceLink.find_or_create_by!(question: question, passage: popularity) do |l|
-  l.decision = "却下"
+  l.decision = "Rejected"
   l.note = "Popularity is not evidence of accuracy. No support is given for the claim."
 end

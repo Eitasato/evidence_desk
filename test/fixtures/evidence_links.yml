@@ -3,11 +3,11 @@
 one:
   question: one
   passage: one
-  decision: 採用
+  decision: Adopted
   note: MyText
 
 two:
   question: two
   passage: two
-  decision: 採用
+  decision: Adopted
   note: MyText

@@ -1,24 +1,32 @@
-# README
+# Evidence Desk
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A small Rails app for tracing every claim in an SEO content outline back to the exact paragraph and source that supports it.
 
-Things you may want to cover:
+**Live demo:** https://evidence-desk-903886626513.asia-northeast1.run.app/
+<!-- Note: demo data resets when the container restarts. -->
 
-* Ruby version
+## What it is
+<!-- The problem: in outline work, claims lose their link to the source. Who uses it, and for what. -->
 
-* System dependencies
+## How it works
 
-* Configuration
+### Data model
+<!-- Source, Passage, Question, EvidenceLink. Why the app is read in one direction: Question -> EvidenceLink -> Passage -> Source. -->
 
-* Database creation
+### What happens when you open a question
+<!-- URL -> routes -> controller -> model -> database (SQL) -> view, using /questions/1 as the example. -->
 
-* Database initialization
+## Design decisions
+<!-- Start from the question. Record rejected evidence too. Deleting a source cascades. Sources without a URL (books). -->
 
-* How to run the test suite
+## Deployment
+<!-- Docker image built from the Rails Dockerfile. Cloud Run settings and why: port, max 1 instance, no CPU throttling, master key, data reset. -->
 
-* Services (job queues, cache servers, search engines, etc.)
+## What I learned
+<!-- 422: Origin was https but Rails saw http (assume_ssl). 502: Cloud Run throttled CPU while Rails was still booting. CI broke when GitHub moved ubuntu-latest. A gem vulnerability (crass) published two days earlier. -->
 
-* Deployment instructions
+## Next steps
+<!-- Ruby upgrade, require a note when rejecting, prevent duplicate passages, simplify Source/Passage screens, clarify the evidence list vs. the question page. -->
 
-* ...
+## Running locally
+<!-- Ruby 3.2.3, Rails 8.1.4, SQLite. bundle install, bin/rails db:prepare, bin/rails server. -->

@@ -1,9 +1,9 @@
 one:
-  title: 資料1
+  title: Source 1
   url: https://example.com/one
   source_type: MyString
 
 two:
-  title: 資料2
+  title: Source 2
   url: https://example.com/two
   source_type: MyString
